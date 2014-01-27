@@ -4,7 +4,7 @@
 
 ;; Author: Prathamesh Sonpatki
 ;; URL: https://github.com/prathamesh-sonpatki/exercism-mode
-;; Version: 0.0.1
+;; Version: 0.0.2
 
 ;; This file is NOT part of GNU Emacs.
 
@@ -13,6 +13,6 @@
 (defun exercism-submit-current-file ()
   "Submit current file to exercism.io for submission."
   (interactive)
-  (compilation-start (concat "exercism submit " buffer-file-name)))
+  (compilation-start (shell-quote-argument (concat "exercism submit " buffer-file-name))))
 
 ;;; exercism.el ends here
